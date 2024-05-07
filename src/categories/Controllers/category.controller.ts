@@ -13,7 +13,6 @@ export class CategoryController {
   async list(@Res() res): Promise<ResponseType<Category>> {
     try {
       const categories = await this.categoryService.findAll();
-      console.log(categories);
       return res.json(
         new ResponseData(categories, HttpStatusCode.OK, HttpMessage.OK),
       );

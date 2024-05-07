@@ -16,6 +16,6 @@ export class CategoriesEntity extends BaseEntity {
   @Column()
   description: string;
   @OneToMany(() => CarsEntity, (cars) => cars.category)
-  @JoinColumn()
+  @JoinColumn({ name: 'category_id', referencedColumnName: 'id' })
   cars: CarsEntity[];
 }
