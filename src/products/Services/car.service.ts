@@ -31,4 +31,8 @@ export class CarService {
     }
     return false;
   }
+  async findRelations(id: number): Promise<Car[]> {
+    return await this.carRepository.findRelatedCars(id);
+  }
+
 }

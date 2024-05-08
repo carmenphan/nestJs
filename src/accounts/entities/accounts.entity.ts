@@ -4,9 +4,9 @@ export class AccountsEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
   @Column()
-  userName: string;
+  username: string;
   @Column()
   password: string;
   @Column()
-  permission: string;
+  permissions: string;
 }

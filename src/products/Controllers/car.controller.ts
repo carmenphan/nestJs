@@ -79,7 +79,7 @@ export class CarController {
   @Delete(':id')
   async delete(
     @Param('id') id: number,
-    @Res() res
+    @Res() res,
   ): Promise<ResponseType<Car>> {
     try {
       return res.json(
@@ -95,4 +95,19 @@ export class CarController {
       );
     }
   }
+  @Get('/relations/:id')
+  async getRelations(
+    @Res() res,
+    @Param('id') id: number,
+  ): Promise<ResponseType<Car>> {
+    try {
+      const car = await this.carService.findRelations(id);
+      return res.json(new ResponseData(car, HttpStatusCode.OK, HttpMessage.OK));
+    } catch (error) {
+      return res.json(
+        new ResponseData(null, HttpStatusCode.NOT_FOUND, HttpMessage.NOT_FOUND),
+      );
+    }
+  }
+
 }

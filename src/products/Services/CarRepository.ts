@@ -16,4 +16,10 @@ export class CarRepository
   ) {
     super(repository);
   }
+  async findRelatedCars(id: number): Promise<CarsEntity[]> {
+    return await this.repository.find({
+      where: { id },
+      relations: ['category'],
+    });
+  }
 }

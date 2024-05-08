@@ -22,3 +22,7 @@ export enum HttpMessage {
   SERVICE_UNAVAILABLE = 'SERVICE UNAVAILABLE',
   GATEWAY_TIMEOUT = 'GATEWAY TIMEOUT'
 }
+export enum Role {
+  ADMIN = 'ADMIN',
+  USER = 'USER'
+}
